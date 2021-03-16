@@ -25,3 +25,5 @@ demo_rocksdb-*.tar
 
 # Temporary files for e.g. tests
 /tmp
+data
+mix.lock

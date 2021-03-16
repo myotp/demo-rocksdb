@@ -1,21 +1,16 @@
 # DemoRocksdb
 
-**TODO: Add description**
+## Run
+rm -rf data
 
-## Installation
+mix do deps.get, deps.compile, compile --force
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `demo_rocksdb` to your list of dependencies in `mix.exs`:
+iex -S mix
 
 ```elixir
-def deps do
-  [
-    {:demo_rocksdb, "~> 0.1.0"}
-  ]
-end
+{:ok, db} = DemoRocksdb.setup()
+DemoRocksdb.tab2list(db)
+DemoRocksdb.take(db, 4)
+DemoRocksdb.take(db, 4, "4")
+DemoRocksdb.take(db, 4, "8")
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/demo_rocksdb](https://hexdocs.pm/demo_rocksdb).
-
